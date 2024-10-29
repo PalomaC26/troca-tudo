@@ -1,38 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
-    <meta name="description" content="Programador Front-End, Senai.">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Senai">
-    <meta name="author" content="Paloma Carvalho">   
-    <!--Título do Site-->
-    <title>Troca tudo</title>
-
-<ul class="menu">
-  
-   <img src="images/produto1.jpg" alt="">
-   <img src="images/produto2.jpg" alt="">
-   <img src="images/produto3.jpg" alt="">
-
-</ul>
-</nav>
-
-</header>
-
-
-  <footer class="rodape">
-    
-  
-        <img src="icons/facebook.svg" alt="">
-        <img src="icons/instagram.svg" alt="">
-        <img src="icons/Twitter.svg" alt="">
-        <img src="icons/x.svg" alt="">
-        <img src="icons/youtube.svg" alt="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca Tudo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Coluna esquerda: Avatar e informações do usuário -->
+        <div class="coluna-esquerda">
+            <img id="user-avatar" src="avatars/default-avatar.jpg" alt="Avatar Padrão">
+            <h3 id="user-name">Usuário não logado</h3>
+            
+            <!-- Bloco de Curtidas e Descurtidas com imagens -->
+            <div class="interacoes">
+                <div class="curtidas-bloco">
+                    <span id="user-likes">0</span>
+                    <img src="images/curtidas.jpg" alt="Curtir" class="icon-curtida">
+                </div>
+                <div class="descurtidas-bloco">
+                    <span id="user-dislikes">0</span>
+                    <img src="images/descurtidas.jpg" alt="Descurtir" class="icon-descurtida">
+                </div>
+            </div>
         
-     
-     </ul>
-</footer>  
+            <button id="login-btn" onclick="mostrarModal()">Entrar</button>
+            <button id="logout-btn" style="display:none;" onclick="fazerLogout()">Sair</button>
+        </div>
+    
+        <!-- Coluna direita: Lista de produtos -->
+        <div class="coluna-direita">
+            <div id="produtos-lista">
+                <!-- Exemplo de um produto com comentários -->
+                <div class="produto" id="produto-1">
+                    <h3>Nome do Produto 1</h3>
+                    <img src="images/produto1.jpg" alt="Produto 1">
+                    
+                    <!-- Bloco de Curtidas, Descurtidas e Comentários -->
+                    <div class="interacoes-produto">
+                        <div class="curtidas-descurtidas">
+                            <p>Curtidas: <span class="curtidas">10</span> | Descurtidas: <span class="descurtidas">2</span></p>
+                        </div>
+                        <div class="comentarios">
+                            <p>Último Comentário: Ótimo produto! - São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button id="login-submit" onclick="fazerLogin()">Entrar</button>
+            <p id="login-error" style="color: red;"></p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Nome da empresa à esquerda -->
+            <div class="footer-left">
+                <p class="company-name">Troca Tudo</p>
+            </div>
+
+            <!-- Ícones de redes sociais no centro -->
+            <div class="footer-center">
+                <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="icons/tiktok.svg" alt="TikTok"></a>
+                <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="icons/x.svg" alt="X"></a>
+            </div>
+
+            <!-- Copyright à direita -->
+            <div class="footer-right">
+                <p>&copy; 2024 By Paloma Carvalho.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="app.js"></script>
 </body>
 </html>
